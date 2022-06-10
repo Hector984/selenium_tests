@@ -37,6 +37,9 @@ class HomeTest(unittest.TestCase):
         password_input.send_keys('admin123')
         
         btn_login = driver.find_element(By.ID, 'btnLogin').click()
+        
+    
+        
     
     
     def tearDown(self):
