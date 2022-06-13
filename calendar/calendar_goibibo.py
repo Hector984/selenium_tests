@@ -20,7 +20,7 @@ class CalendarGoibibo(unittest.TestCase):
         driver = self.driver
         
         # Change the text according to the day
-        input_calendar = driver.find_element(By.XPATH, '//p[text()="Sunday"]').click()
+        input_calendar = driver.find_element(By.XPATH, '//p[text()="Monday"]').click()
         time.sleep(3)
         days_list = driver.find_elements(By.XPATH, '//div[@class="DayPicker-Body"]//div[@class="DayPicker-Day"]')
         time.sleep(3)
