@@ -1,17 +1,18 @@
 from datetime import datetime
 import unittest
 import time
+from selenium.webdriver.chrome.options import Options # Para tests en el background
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 from pyunitreport import HTMLTestRunner
-from selenium.webdriver.support.select import Select
 
 class Screenshot(unittest.TestCase):
     
     def setUp(self):
+        opt = Options()
+        opt.headless = True
         srv = Service(r'./chromedriver.exe')
-        self.driver = webdriver.Chrome(service = srv)
+        self.driver = webdriver.Chrome(service = srv, chrome_options=opt)
         driver = self.driver
         driver.get('https://google.com/')
         driver.maximize_window()
