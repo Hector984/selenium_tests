@@ -27,6 +27,7 @@ class Alerts(unittest.TestCase):
         alert = driver.switch_to.alert
         print(f"{alert.text}")
         alert.accept()
+        time.sleep(3) 
     
         
         

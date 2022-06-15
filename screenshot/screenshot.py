@@ -12,7 +12,8 @@ class Screenshot(unittest.TestCase):
         opt = Options()
         opt.headless = True
         srv = Service(r'./chromedriver.exe')
-        self.driver = webdriver.Chrome(service = srv, chrome_options=opt)
+        # self.driver = webdriver.Chrome(service = srv, chrome_options=opt)
+        self.driver = webdriver.Chrome(service = srv)
         driver = self.driver
         driver.get('https://google.com/')
         driver.maximize_window()
