@@ -38,10 +38,6 @@ class HomeTest(unittest.TestCase):
         
         btn_login = driver.find_element(By.ID, 'btnLogin').click()
         
-    
-        
-    
-    
     def tearDown(self):
         self.driver.implicitly_wait(3)
         self.driver.quit()

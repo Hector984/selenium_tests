@@ -25,6 +25,8 @@ class Keyboard(unittest.TestCase):
         driver.find_element(By.ID, 'email').send_keys("Hector")
         chain = ActionChains(driver)
         
+        time.sleep(2)
+        
         # Select the text
         chain.key_down(Keys.CONTROL).send_keys('a').key_up(Keys.CONTROL)
         
@@ -35,7 +37,12 @@ class Keyboard(unittest.TestCase):
         chain.key_down(Keys.TAB).key_up(Keys.TAB)
         
         # Paste the text
-        chain.key_down(Keys.CONTROL).send_keys("v").key_up(Keys.CONTROL)
+        chain.key_down(Keys.CONTROL).send_keys("v").key_up(Keys.CONTROL).perform()
+        
+        # Check if they are equal
+        driver.find_element(By.CLASS_NAME, '_9lsa').click()
+        
+        time.sleep(2)
         
         # Press enter key
         chain.send_keys(Keys.ENTER).perform()
