@@ -1,12 +1,13 @@
 import unittest
 import os
+import time
 from pyunitreport import HTMLTestRunner
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from loginPage import LoginPage
+from Pages.login_page import LoginPage
+from credentials import Credentials
 
-
-class LoginPage(unittest.TestCase):
+class LoginTest(unittest.TestCase):
     
     @classmethod
     def setUpClass(clc):
@@ -17,13 +18,16 @@ class LoginPage(unittest.TestCase):
         driver.maximize_window()
         driver.implicitly_wait(30)
     
-    def test_login_customer_front_end(self):
+    def test_login_user(self):
         driver = self.driver
+        credentials = Credentials()
         login_user = LoginPage(driver)
         login_user.open()
-        login_user.login_customer_fron_end()
-        login_user.enter_login_customer_front_end_credentials()
-        login_user.click_login_button()
+        login_user.send_email(credentials.email_customer_front_end)
+        login_user.send_password(credentials.password_customer_front_end)
+        login_user.click_login()
+        
+        time.sleep(5)
         
         self.assertEqual('https://www.phptravels.net/account/dashboard', driver.current_url)
         

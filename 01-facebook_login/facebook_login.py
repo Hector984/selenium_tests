@@ -63,9 +63,10 @@ class FacebookRegistration(unittest.TestCase):
         # Sexo
         sexo = driver.find_element(By.XPATH, '//input[@value="2"]').click()
         
+        time.sleep(3)
         # Submit button
         # register_button = driver.find_element(By.XPATH, '//button[@name="websubmit"]').click()
-        
+        # time.sleep(15)
 
     def tearDown(self):
         self.driver.implicitly_wait(3)
