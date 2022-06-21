@@ -36,7 +36,7 @@ class FacebookHome(unittest.TestCase):
         month_drop_down.select_by_value("6")
         time.sleep(3)
         
-        # This methos is case sensitive
+        # This method is case sensitive
         month_drop_down.select_by_visible_text("ago")
         
     def test_first_option_is_jun(self):

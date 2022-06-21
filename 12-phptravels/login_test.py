@@ -5,6 +5,7 @@ from pyunitreport import HTMLTestRunner
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from Pages.login_page import LoginPage
+from Pages.dashboard_page import DashboardPage
 from credentials import Credentials
 
 class LoginTest(unittest.TestCase):
@@ -29,8 +30,10 @@ class LoginTest(unittest.TestCase):
         
         time.sleep(5)
         
-        self.assertEqual('https://www.phptravels.net/account/dashboard', driver.current_url)
+        dashboard = DashboardPage(driver)
+        dashboard.logout()
         
+        self.assertEqual('https://www.phptravels.net/account/dashboard', driver.current_url)
         
     @classmethod
     def tearDownClass(clc):
