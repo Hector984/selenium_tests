@@ -67,15 +67,15 @@ class CreateAccountPage(object):
         
         day_selector = self.driver.find_element(By.ID, self.day_selector_id)
         day_dropdown = Select(day_selector)
-        day_dropdown.select_by_visible_text(day)
+        day_dropdown.select_by_value(day)
         
         month_selector = self.driver.find_element(By.ID, self.month_selector_id)
         month_dropdown = Select(month_selector)
-        month_dropdown.select_by_visible_text(month)
+        month_dropdown.select_by_value(month)
         
         year_selector = self.driver.find_element(By.ID, self.year_selector_id)
         year_dropdown = Select(year_selector)
-        year_dropdown.select_by_visible_text(year)
+        year_dropdown.select_by_value(year)
     
     def newsletter(self):
         
@@ -102,6 +102,7 @@ class CreateAccountPage(object):
         self.driver.find_element(By.ID, self.address_selector_id).clear()
         self.driver.find_element(By.ID, self.address_selector_id).send_keys(address)
     
+    # Optional
     def addressLineTwo(self, address):
         self.driver.find_element(By.ID, self.address_line_two_selector_id).clear()
         self.driver.find_element(By.ID, self.address_line_two_selector_id).send_keys(address)
@@ -113,7 +114,7 @@ class CreateAccountPage(object):
     def state(self, state):
         state_selector = self.driver.find_element(By.ID, self.state_selector_id)
         state_dropdown = Select(state_selector)
-        state_dropdown.deselect_by_visible_text(state)
+        state_dropdown.select_by_value(state)
     
     def zip_code(self, zip_code):
         self.driver.find_element(By.ID, self.zip_code_selector_id).clear()
@@ -122,7 +123,7 @@ class CreateAccountPage(object):
     def country(self, country):
         country_selector = self.driver.find_element(By.ID, self.country_selector_id)
         country_dropdown = Select(country_selector)
-        country_dropdown.deselect_by_visible_text(country)
+        country_dropdown.select_by_value(country)
     
     def additional_info(self, text):
         self.driver.find_element(By.ID, self.additional_info_selector_id).clear()

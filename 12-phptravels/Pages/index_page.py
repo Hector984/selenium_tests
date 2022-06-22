@@ -10,6 +10,10 @@ class IndexPage(object):
         self.url = 'http://automationpractice.com/index.php'
         self.sign_in_selector_class = 'login'
         
+    def open(self):
+        
+        self.driver.get(self.url)
+        
     def sign_in(self):
         
         self.driver.find_element(By.CLASS_NAME, self.sign_in_selector_class).click()

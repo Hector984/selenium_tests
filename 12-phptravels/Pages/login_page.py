@@ -5,7 +5,7 @@ class LoginPage(object):
     def __init__(self, driver):
         
         self.driver = driver
-        self.url = 'https://www.phptravels.net/login'
+        self.url = 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
         self.selector_name_email = 'email'
         self.selector_name_password = 'password'
         self.login_button = '//span[text()="Login"]'
@@ -34,8 +34,8 @@ class LoginPage(object):
         driver.find_element(By.XPATH, self.login_button).click()
         
     def create_account(self,email):
-        self.driver.find(By.ID, self.create_account_email_selector_id).clear()
-        self.driver.find(By.ID, self.create_account_email_selector_id).send_keys(email)
+        self.driver.find_element(By.ID, self.create_account_email_selector_id).clear()
+        self.driver.find_element(By.ID, self.create_account_email_selector_id).send_keys(email)
         
         self.driver.find_element(By.ID, self.create_account_button_selector_id).click()
         
