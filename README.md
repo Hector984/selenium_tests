@@ -16,3 +16,4 @@ Interacting with basic selectors and elements
  Testing web pages using POM (Page Object Model)
  
  1.- Orange HRM 
+ 2.- http://automationpractice.com
